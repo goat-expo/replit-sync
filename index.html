@@ -1,58 +1,45 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Raghav Expo</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Teleport Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
+        .teleport-button {
+            background-color: #000;
+            color: #0ff;
+            padding: 15px 30px;
+            border: 2px solid #0ff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+            box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .teleport-button:hover {
+            background-color: #0ff;
+            color: #000;
+            box-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+        }
+    </style>
 </head>
-
-
 <body>
-  <form action="/submit" method="post">
-    <!-- Text input for username -->
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    <br><br>
+    <button class="teleport-button" onclick="teleportToPage()">Click to Teleport</button>
 
-    <!-- Password input -->
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    <br><br>
-
-    <!-- Radio buttons for gender -->
-    <label>Gender:</label>
-    <input type="radio" id="male" name="gender" value="male">
-    <label for="male">Male</label>
-    <input type="radio" id="female" name="gender" value="female">
-    <label for="female">Female</label>
-    <br><br>
-
-
-  </form>
-
-  <script src="script.js"></script>
-  <br />
-
-
-  <h1> <a href="https://goat-expo.github.io/r-stories/submit" target="_blank">submit</a><br /> </h1>
-
-  <h2> <a href="https://m.youtube.com/@Raghav_expo">Raghav -- X pro X --gaming</a></h2>
-  <h1>BY RAGHAV KATHPAL</h1>
-  <h3>I am making this trail website by course sigma web devloper by code with harry</h3>
-
-  <h1> <a href="https://www.codewithharry.com/#google_vignette">code with harry</a></h1>
-
-  <h1>
-    got domaine
-  </h1>
-  </a>
-  <h1>
-    thanks to "shivam baghla"
-  </h1>
-
-
+    <script>
+        function teleportToPage() {
+            const url = ' https://goat-expo.github.io/r-stories/submit'; // Replace this with your desired link
+            window.location.href = url;
+        }
+    </script>
 </body>
-
 </html>
