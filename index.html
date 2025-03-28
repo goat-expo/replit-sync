@@ -1,12 +1,65 @@
-<!doctype HTML>
-<html>
-    <title>
-        understanding imagetags 
-    </title>
-<body style="background-color:black;">
-    <h1>
-        understanding imagetags 
-    </h1>
-    <img src="https://images.pexels.com/photos/1525039/pexels-photo-1525039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image" width="600px" height="300px">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎉 Surprise Party 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #1a1a1a;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
 
-  </HTML>
+    h1 {
+      margin-top: 20vh;
+      font-size: 4rem;
+      animation: pop 1s ease forwards;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 2rem;
+      animation: fall linear infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎊 You Found the Surprise! 🎊</h1>
+
+  <script>
+    const emojis = ["🎈", "✨", "💖", "🎉", "🥳", "🌟", "🎁", "🍭", "🪅"];
+    
+    function createEmoji() {
+      const emoji = document.createElement("div");
+      emoji.className = "emoji";
+      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.animationDuration = 2 + Math.random() * 3 + "s";
+      emoji.style.top = "-2rem";
+      document.body.appendChild(emoji);
+
+      setTimeout(() => emoji.remove(), 5000);
+    }
+
+    setInterval(createEmoji, 200);
+  </script>
+</body>
+</html>
