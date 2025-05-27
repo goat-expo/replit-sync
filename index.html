@@ -1,72 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Modern Landing Page</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="script.js" defer></script>
+</head>
 
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-      overflow: hidden;
-    }
+<body>
+  <div id="auth">
+    <div id="g_id_onload"
+      data-client_id="YOUR_GOOGLE_CLIENT_ID"
+      data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+  </div>
 
-    .hero {
-      text-align: center;
-      animation: float 6s ease-in-out infinite;
-    }
+  <div id="pin-section" class="hidden">
+    <h2>Enter PIN to Access To-Do List</h2>
+    <input type="password" id="pin-input" maxlength="4" placeholder="Enter 4-digit PIN">
+    <button onclick="verifyPIN()">Submit</button>
+    <p id="pin-error"></p>
+  </div>
 
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(to right, #00f2fe, #4facfe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  <div id="todo-app" class="hidden">
+    <header>
+      <h1>Smart To-Do List</h1>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </header>
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #ccc;
-    }
+    <section>
+      <h2>Section 1: Urgent Tasks</h2>
+      <ul id="urgent-tasks"></ul>
+      <input type="text" id="urgent-input" placeholder="Add urgent task">
+      <button onclick="addTask('urgent')">Add</button>
+    </section>
 
-    .hero button {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 50px;
-      background: linear-gradient(to right, #00f2fe, #4facfe);
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 15px #00f2fe80;
-    }
+    <section>
+      <h2>Section 2: Less Urgent Tasks</h2>
+      <ul id="less-urgent-tasks"></ul>
+      <input type="text" id="less-urgent-input" placeholder="Add less urgent task">
+      <button onclick="addTask('less-urgent')">Add</button>
+    </section>
 
-    .hero button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00f2fecc;
-    }
+    <section>
+      <h2>Section 3: Very Less Urgent Tasks</h2>
+      <ul id="very-less-urgent-tasks"></ul>
+      <input type="text" id="very-less-urgent-input" placeholder="Add very less urgent task">
+      <button onclick="addTask('very-less-urgent')">Add</button>
+    </section>
+  </div>
+</body>
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .
-
+</html>
